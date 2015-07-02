@@ -40,7 +40,7 @@ using PostSharp.Extensibility;
 //-----------repro instructions------------
 // build project as it currently stands. Open exe in decompiler of choice.
 //      ** note that the properties in the UserLoggedOnEvent class have the aspect attached to them
-// uncomment line with AspectPriority = 21, recompile and check in the decompiler
+// uncomment line with AspectPriority = 19, recompile and check in the decompiler
 //      ** note that the properties in the UserLoggedOnEvent class no longer have the aspect attached to them
 //      ?? Why does adding this exclude make the previous exclude work now?
 //
