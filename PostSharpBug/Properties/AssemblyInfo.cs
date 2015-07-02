@@ -36,5 +36,17 @@ using PostSharp.Extensibility;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
-[assembly: MetricsAspect(AspectPriority = 1, AttributeExclude = true, AttributeTargetTypes = "PostSharpBug.Messaging.*", ApplyToStateMachine = false)]
-[assembly: MetricsAspect(AspectPriority = 20, AttributeTargetMemberAttributes = MulticastAttributes.Instance, ApplyToStateMachine = false)]
+
+//-----------repro instructions------------
+// build project as it currently stands. Open exe in decompiler of choice.
+//      ** note that the properties in the UserLoggedOnEvent class have the aspect attached to them
+// uncomment line with AspectPriority = 21, recompile and check in the decompiler
+//      ** note that the properties in the UserLoggedOnEvent class no longer have the aspect attached to them
+//      ?? Why does adding this exclude make the previous exclude work now?
+//
+
+
+
+//[assembly: MetricsAspect(AspectPriority = 19, AttributeExclude = true, AttributeTargetMembers = ".ctor", ApplyToStateMachine = false)]
+[assembly: MetricsAspect(AspectPriority = 20, AttributeExclude = true, AttributeTargetMembers = "regex:^get_|^set_", ApplyToStateMachine = false)]
+[assembly: MetricsAspect(AspectPriority = 1, AttributeTargetMemberAttributes = MulticastAttributes.Instance, ApplyToStateMachine = false)]
