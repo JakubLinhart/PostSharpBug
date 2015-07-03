@@ -48,5 +48,5 @@ using PostSharp.Extensibility;
 
 
 //[assembly: MetricsAspect(AspectPriority = 19, AttributeExclude = true, AttributeTargetMembers = ".ctor", ApplyToStateMachine = false)]
-[assembly: MetricsAspect(AspectPriority = 20, AttributeExclude = true, AttributeTargetMembers = "regex:^get_|^set_", ApplyToStateMachine = false)]
-[assembly: MetricsAspect(AspectPriority = 1, AttributeTargetMemberAttributes = MulticastAttributes.Instance, ApplyToStateMachine = false)]
+[assembly: MetricsAspect(AttributePriority = 20, AttributeExclude = true, AttributeTargetMembers = "regex:^get_|^set_", ApplyToStateMachine = false)]
+[assembly: MetricsAspect(AttributePriority = 1, AttributeTargetMemberAttributes = MulticastAttributes.Instance, ApplyToStateMachine = false)]
